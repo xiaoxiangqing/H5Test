@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.big{
+				height: 600px;
+				width: 300px;
+				border: 1px solid burlywood;
+				background: bisque;
+				margin: 0 auto;
+				border-radius: 10px;
+				padding: 10px;
+			}
+			#txt{
+				display: inline-block;
+				width: 180px;
+				height: 20px;
+				margin-right: 10px;
+			}
+			#top{
+				margin-bottom: 10px;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="big">
+			<div id="top">
+				<input type="text"  id="txt" placeholder="分享生活点滴..." />
+				<input type="button"  id="btn" value="发表" />
+				<input type="button"  id="btn2" value="删除" />
+				
+			</div>
+			<div id="content">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var txt = document.getElementById("txt");
+			var btn1 = document.getElementById("btn");
+			var btn2 = document.getElementById("btn2");
+			var to = document.getElementsByTagName("p");
+			var content =document.getElementById("content");
+			btn1.onclick=port;
+			btn2.onclick=del;
+			var to;
+			function port()
+			{	
+				var p = document.createElement("p");
+				if(txt.value)
+				{
+					var temp=txt.value;
+					p.innerHTML = temp;
+					p.flag=true;
+					content.appendChild(p);
+					txt.value = "";
+					p.onclick=function(){
+							this.flag=!this.flag;
+							this.style.color="red";
+							
+							console.log(this.flag);
+							
+					};
+					p.onmouseover=function(){
+						this.style.background="orange";
+						
+					};
+					p.onmouseout=function(){
+						this.style.background="";
+						
+					};
+					
+				}
+				else
+				{
+					alert("请输入内容...");
+				}
+
+			 
+			}
+			
+			
+			function del()
+			{
+				
+				console.log(to.length);
+				for(var k=0;k<to.length;k++)
+				{
+					if(!to[k].flag)
+					{
+						content.removeChild(to[k]);
+						k--;
+					}
+				}
+			}
+			
+			}
+			
+		</script>
+	</body>
+</html>
