@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.DIV{
+				width: 750px;
+				height: 200px;
+				border: 10px solid blanchedalmond;
+				background: black;
+				border-radius: 20px;;
+				margin: 0 auto;
+				padding: 20px;
+				
+				
+			}
+			.small{
+				display: inline-block;
+				margin-left: 10px;
+				position: relative;	
+				
+			}
+			.small:hover .big{
+				display: block;
+				z-index:2;
+				position: absolute;
+				top:70px;
+				left: 70px;
+				border-radius: 50%;
+				transition: 0.5s;
+			}
+			.big:hover{
+				transform: scale(1.5);
+				
+			}
+			.big{
+				display: none;
+			}
+			.bigone{
+				margin: 0 auto;
+				text-align: center;
+				height: 200px;
+				width: 200px;
+				border-radius: 50%;
+			
+				overflow: hidden;
+				transition: 0.3s;
+			}
+			.bigone img{transition: 0.3s;}
+			.bigone:hover {
+				border-radius: 20px;
+				width: 250px;
+			}
+			.bigone img:hover{
+					transform: scale(1.5);
+			}
+			.last{
+				border: 5px solid red;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="DIV">
+			<div class="small"><img class="small" src="img/imagen1_small.jpg"/><img class="big" src="img/imagen1.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen2_small.jpg"/><img class="big" src="img/imagen2.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen3_small.jpg"/><img class="big" src="img/imagen3.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen4_small.jpg"/><img class="big" src="img/imagen4.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen5_small.jpg"/><img class="big" src="img/imagen5.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen6_small.jpg"/><img class="big" src="img/imagen6.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen7_small.jpg"/><img class="big" src="img/imagen7.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen8_small.jpg"/><img class="big" src="img/imagen8.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen9_small.jpg"/><img class="big" src="img/imagen9.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen10_small.jpg"/><img class="big" src="img/imagen10.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen11_small.jpg"/><img class="big" src="img/imagen11.jpg"/></div>
+			<div class="small"><img class="small" src="img/imagen12_small.jpg"/><img class="big" src="img/imagen12.jpg"/></div>
+		</div>
+		<div class="bigone"><img src="img/imagen2.jpg" /></div>
+		
+		
+
+	</body>
+</html>
