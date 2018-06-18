@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<!--视图自适应-->
+		<meta name="viewport" content="width=device-width,
+			initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>音乐贺卡</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body>
+		<div class="music">
+			<img src="image/music_pointer.png"/>
+			<img id="music" class="play" src="image/music_disc.png"/>
+		</div>
+		<div id="n1"></div>
+		<div id="n2"></div>
+		<div id="page1" class="page">
+			<div class="bg" ></div>
+			<div class="p1_lantern"></div>
+			<div class="p1_click">
+				<p class="p1_cc">点击屏幕<br/>进入妖怪的世界</p>
+			</div>	
+		</div>
+		<div class="page" id="page2">
+			<div class="bg p2_bg_loading"></div>
+			<div class="bg"></div>
+			<div class="p2_circle"></div>
+			<div class="p2_2018"></div>
+		</div>
+		<div class="page" id="page3">
+			<div class="bg"></div>
+			<div class="p3_blessing"></div>
+		</div>
+		
+		<audio autoplay="true">
+			<source src="audio/godbless.mp3" type="audio/mp3"/>
+		</audio>
+	</body>
+</html>
