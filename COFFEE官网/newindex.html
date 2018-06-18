@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COFFEE</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery.singlePageNav.min.js"></script>
+    <style>
+		a{
+			text-decoration: none;
+		}
+        .navbar{
+        	margin: 0 auto;
+        	
+        }       
+        .navbar-default{
+        	background: white;
+        	height: 80px;
+        }
+        .dropdown-menu{
+        	min-width: 100px;
+        }
+        li{
+        	list-style-type: none;
+        	margin-left: 20px;
+        }
+        .navbar-brand p{
+        	color: green;font-size: 30px;line-height: 60px;
+        }
+        .carousel .item
+        {
+        	height: 600px;
+        }
+         .carousel .item img{
+        	height: 100%;
+        	width: 100%;
+
+        }
+         .carousel .item h1{
+         	color: green;
+         	font-weight: bold;
+         }
+        
+       	.image{
+       		height: 350px;
+       		overflow: hidden;
+       		z-index: 10;
+       		padding: 0px;
+       		text-align: center;
+       		
+       	}
+       	.image ul{
+       		padding: 0px;
+       		height: 100%;
+       		width: 300%;
+       		background: #fff;
+       	}
+     	.image li{
+     		padding: 0px;
+     		margin: 0px;
+     		float: left;
+     		width: 33%;
+     		height: 100%;
+     		transition:0.8s ease;
+     	}
+     	.image li img{
+     		display: block;
+     		width: 100%;
+     		height: 100%;
+     	}
+     
+     	
+       	.change{
+       		position: absolute;
+       		bottom: -10px;
+       		left: 0px;
+       		display: inline-block;
+       		height: 30px;
+       		width: 30px;
+       		color: green;
+       		font-size: 20px;
+       		font-weight: bold;
+       		
+       	}
+       	.changer{
+       		position: absolute;
+       		bottom: -10px;
+       		left: 31px;
+       		display: inline-block;
+       		height: 30px;
+       		width: 30px;
+       		color: green;
+       		font-size: 20px;
+       		font-weight: bold;
+       	}
+       	.change:hover{
+       		cursor: pointer;
+       		background: green;
+       		color: white;
+       	}
+       	.changer:hover{
+       		cursor: pointer;
+       		background: green;
+       		color: white;
+       	}
+       	.image2{
+       		background: green;
+       		height: 350px;
+       		z-index: 10;
+       	}
+       .rig{
+       		text-align: center;
+       	}
+       	.rig img{
+       		margin-top: 100px;
+       	}
+       	.rig p:nth-of-type(1){
+       		margin-top: 40px;
+       	}
+       	.fon1{
+       		color: white;
+       		font-size: 30px;
+       		
+       	}
+       	.fon2{
+       		color: white;
+       		font-size: 10px;
+       		opacity: 0.5;
+       	}
+       	.center{
+       		height: 300px;
+       		text-align: center;
+       		padding-top:100px;
+       		
+       	}
+       	.coffeed{
+       		height: 300px;
+       		overflow: hidden;
+       		margin-top: -5%;
+       		padding: 0px;
+       		text-align: center;
+       		background: url(img/bean.jpg);
+       		background-size: 100% 100%;	
+       	}
+       	.coffeed-content{
+       		background: rgba(0,0,0,0.8);
+       		width: 100%;
+       		height: 100%;
+       		padding-top: 100px;
+       	}
+       	.coffeed-content-p-1{
+       		color: white;
+       		font-size: 25px;
+       	}
+       	.coffeed-content-p{
+       		font-size: 15px;
+       		margin-top: 10px;
+       		color: white;
+       		opacity: 0.6;
+       	}
+       
+       	.line-one{
+       		background: white;
+       		border-radius: 10px;
+       		height: 3px;
+       		width: 200px;
+       		margin: 0 auto;
+       	}
+       	.center p{
+       		font-size: 10px;
+       		margin-top: 0px;
+       		margin-bottom: 0px;
+       		margin-left: 7px;
+       	}
+       	.shopping{
+       		text-align: center;
+       		margin-top: 100px;
+       	}
+       	.shopping-title{
+       		font-size: 35px;
+       		color: green;
+       	}
+       	.shopping-line{
+       		background: whitesmoke;
+       		border-radius: 
+       		10px;height: 3px;
+       		width: 1100px;
+       		margin: 0 auto;
+       	}
+       	.shopping-content{
+       		margin-top: 50px;
+       	}
+       	.shopping-content-one{
+       		background: green;
+       		height: 300px;
+       	}
+       	.shopping-content-one p:nth-of-type(1){
+       		font-size: 30px ;
+       		color: white;
+       		margin-top: 100px;
+       	}
+       	.shopping-content-one p:nth-of-type(2){
+       		font-size: 15px ;
+       		color: white;
+       		margin-top: 20px;
+       		opacity: 0.8;
+       	}
+       	.shopping-content-one p:nth-of-type(3){
+       		font-size: 15px ;
+       		color: white;
+       		margin-top: 0px;
+       		opacity: 0.8;
+       	}
+       	.shopping-content-two{
+       		height: 300px;
+       		overflow: hidden;
+       	}
+       	.on
+       	{
+       		transition: 0.5s;
+       		height: 200px;
+       		width: 200px;
+       		border-radius: 50%;
+       	}
+       	.on:hover{
+       		transform: scale(1.5);
+       	}
+       	.ondiv{
+       		overflow: hidden;
+       		height: 200px;
+       		width: 200px;
+       		border-radius: 50%;
+       		text-align: center;
+       		margin: 0 auto;
+       	}
+       	.shopping-content-two p:nth-of-type(1){
+       		font-size: 18px ;
+       		font-weight: bold;
+       		margin-top: 10px;
+       	}
+       	.shopping-content-two p:nth-of-type(2){
+       		font-size: 13px ;
+       	}
+       	.ondiv:hover
+       	{
+       		border-radius: 30%;
+       		width: 100%;
+       	}
+       	.image3{
+       		
+       		height: 350px;
+       		overflow: hidden;
+       		text-align: center;
+       		
+       		padding: 0px;
+       		cursor: pointer;
+       	}
+        .image3:hover .shop {
+        	background: green;
+        }
+        .image3:hover .shop p {
+        	color: white;
+        }
+       	.image3 img{
+       		height: 230px;
+       		width: 250px;
+       	}
+       	.image3 p:nth-of-type(1){
+       		
+       		color: green;
+       		font-size: 20px;
+       		font-weight: bold;
+       	}
+       	.image3 p:nth-of-type(2){
+       		color: green;
+       		margin-bottom: 5px;
+       	}
+       	#about{
+       		margin-top:100px; 
+       		text-align: center;
+       		margin-bottom: 100px;
+       	}
+       	.about-title{
+       		font-size: 35px;
+       		color: green;
+       	}
+       	.about-line{
+       		background: whitesmoke;
+       		border-radius: 10px;
+       		height: 3px;
+       		width: 1100px;
+       		margin: 0 auto;
+       	}
+       	.about-content{
+       		margin-top: 50px;
+       	}
+       	.shop{
+       		margin: 0 auto;
+       		width: 250px;
+       		height: 120px;
+       		padding-top: 20px;
+       		background: whitesmoke;
+       	}
+       	.shop img{
+       		height: 30px;
+       		width: 30px;
+       		margin: 0 auto;
+       		margin-top:0px;
+       	}
+       .imageBg
+       {
+       		
+       		padding: 0px;
+       		background: url(img/coffeeBg.jpg);
+       		height: 500px;
+			position: relative; 
+			background-size: cover; 
+			background-attachment: fixed; 
+			background-repeat: no-repeat; 
+			background-position: center 70% ; 
+			cursor: pointer;	
+			padding-top: 250px;
+       }
+       .imageBg-content{
+	       	border: 1px solid white;
+	       	margin: 0 auto ;
+	       	text-align: center;
+	       	height: 70	px;
+	       	width: 180px;
+       }
+       .imageBg-content h4{
+       		color: white;
+       }
+       .imageBg-content p{
+       		color: white;
+       }
+       #contact{
+	       	margin:100px 0px 0px 0px; 
+	       	width: 100%;
+       }
+       .contact-content{
+	       	padding:0px ;
+	       	height: 300px;
+       }
+       .contact-content img{
+       		width: 100%;
+       		height: 100%;
+       }
+       .contact-content-two{
+       		padding:0px ;
+       		height: 300px; 
+       		background: greenyellow
+       }
+       .contact-content-two-content{
+       		margin-top: 80px;
+       		margin-left: 50px;
+       }
+       .contact-content-two-content div{
+       		background: whitesmoke;
+       		border-radius: 10px;
+       		height: 1px;
+       		width: 600px;
+       		margin-top: 20px;
+       }
+       .contact-content-two-content p{
+       		margin-top: 20px;
+       		text-indent: 2em;
+       }
+       #footer{
+	       	background: black; 
+	       	padding-top: 1%;
+	       	text-align: center;
+       }
+       #footer .footerList li:nth-of-type(1) a{
+			color: #aaa;
+			font-size: 14pt;
+			line-height: 1.9;
+			font-weight: bold;
+		}
+		#footer .footerList li a
+		{
+		 	color: #aaa;
+		}
+		#footer .footerList li a:hover
+		{
+		 	color: #207a16;
+		}
+		.footerText{
+		 	color: #aaa;
+			line-height: 0.7;
+			margin: 0px;
+		 }
+		#myid {
+			background: white;
+		}
+		#myid .nav li a{
+			height: 80px;
+			
+			line-height: 40px;
+			font-size: 16px;
+		}
+		#myid .nav li{
+			margin: 0px;
+		}
+		.active a{
+			font-weight: bold;
+			border-top:3px solid green ;	
+		}
+		@media only screen and (max-width: 992px) 
+		{
+			
+			.carousel .item
+	        {
+	        	height: 300px;
+	        }
+	        
+		}
+		@media only screen and (min-width: 768px) and (max-width: 992px) {
+			
+			.center .a{
+				width:30px;
+				height: 30px;
+			}
+			.center p{
+				font-size: 7px;
+			}
+			.center .big{
+				width:150px;
+				height: 125px;
+			}
+		}
+    </style>
+</head>
+<body>
+	<!--导航条-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand"><p>&nbsp;COFFEE</p></a>
+			<button class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#myid">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				
+			</button>
+			
+		</div>
+		<div class="pull-right collapse navbar-collapse" id="myid">
+			<ul class="nav navbar-nav" >
+			<li class="active"><a href="#slide-image">HOME</a></li>
+			<li><a href="#machine">MACHINE</a></li>
+			<li><a href="#products">PRODUCTS</a></li>
+			<li><a href="#shop">SHOP</a></li>
+			<li><a href="#about">ABOUT</a></li>
+			<li><a href="#contact">CONTACT</a></li>
+		</ul>
+		</div>
+	</nav>
+	<!--轮播图-->
+	<div class="carousel slide" id="slide-image">
+		<ol class="carousel-indicators">
+			<li data-target="#slide-image" data-slide-to="0" class="active"></li>
+			<li data-target="#slide-image" data-slide-to="1"></li>
+			<li data-target="#slide-image" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/coffee1.jpg" class="img-responsive"/>
+				<div class="carousel-caption">
+					<h1>IDEA & DREAM</h1>
+				</div>
+			</div>
+			<div class="item ">
+				<img src="img/coffee2.jpg" class="img-responsive"/>
+				<div class="carousel-caption">
+					<h1>IDEA & DREAM</h1>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/coffee3.jpg" class="img-responsive"/>
+				<div class="carousel-caption">
+					<h1>IDEA & DREAM</h1>
+				</div>
+			</div>
+			
+		</div>
+		<!--左右滑动-->
+		<a href="#slide-image" class="right carousel-control" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-right">
+				
+			</span>
+		</a>
+		<a href="#slide-image" class="left carousel-control" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-left">
+				
+			</span>
+		</a>
+	</div>
+	
+	<div class="container" id="machine">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3 col-sm-6 image">
+				<ul class="list-unstyled">
+					<li><img src="img/machine1.jpg" class="img-responsive"/></li>
+					<li><img src="img/machine2.jpg" class="img-responsive"/></li>
+					<li><img src="img/machine3.jpg" class="img-responsive"/></li>
+				</ul>
+					
+					
+					<p class="change">&lt</p>
+					<p class="changer">&gt</p>
+			</div>
+			<div class="col-md-3 col-sm-6 image2">
+					<div class="rig">
+						<img src="img/coffee2.png"/>
+						<p class="fon1" >COFFEE</p>
+						<p class="fon1" >MACHINE&nbsp;&nbsp;ONE</p>
+						<div class="fon2" >Superb&nbsp;&nbsp;&nbsp;&nbsp;Features&nbsp;&nbsp;&nbsp;&nbsp;Amazing</div>
+						<div class="fon2" >Roasts</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!--咖啡豆-->
+	<div class="col-md-12 col-sm-12 coffeed" >
+		
+		<div class="coffeed-content">
+			<p class="coffeed-content-p-1">COFFEE</p>
+			<div class="line-one"></div>
+			<p class="coffeed-content-p">We Deeply Understand the Importance of Production for You.</p>
+			<p class="coffeed-content-p">Once it is Stopped. You can't deliever goods in Time. And it has Possibility to Suffer the claim</p>
+			<p class="coffeed-content-p">of Breaking a Contact.</p>
+		</div>
+	</div>
+	<!--咖啡系列-->
+	<div class="container visible-md visible-lg"  id="products">
+		<div class="row" >
+			<div class="col-md-1 col-sm-1 center" >
+				<img src="img/list1.jpg"class="a"/>
+				<p>浓缩咖啡系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list1.jpg"class="a"/>
+				<p>经典咖啡系</p>
+				<p>CLASSIC</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list1.jpg" class="a"/>
+				<p>LATTEE系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list1.jpg" class="a"/>
+				<p>浓缩咖啡系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list1.jpg" class="a"/>
+				<p>冰咖啡系列</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-3 col-sm-3 center ">
+				<img src="img/list.jpg" class="big"/>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list2.jpg" class="a"/>
+				<p>浓缩咖啡系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list3.jpg" class="a"/>
+				<p>浓缩咖啡系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list4.jpg" class="a"/>
+				<p>浓缩咖啡系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+			<div class="col-md-1 col-sm-1 center">
+				<img src="img/list5.jpg" class="a"/>
+				<p>浓缩咖啡系</p>
+				<p>ESPRESSO</p>
+				<p>COFFEE</p>
+			</div>
+		</div>
+	</div>
+	
+	<!--爆款推荐-->
+	<div class="shopping" id="shop">
+		<p class="shopping-title">爆款推荐</p>
+		
+		<div class="shopping-line"></div>
+		
+		<div class="container shopping-content" >
+			<div class="row">
+				<div class="col-md-3  col-sm-3 shopping-content-one">
+					<p>RECOMMEND</p>
+					<p>Super Feauters Amazing</p>
+					<p>Roasts</p>
+
+				</div>
+				<div class="col-md-3 col-sm-3 shopping-content-two" >
+					<div class="ondiv">
+						<img src="img/moca.jpg" class="on"/>
+					</div>
+					<p>摩卡咖啡</p>
+					<p>由意大利浓缩咖啡、巧克力酱、鲜奶油和牛奶混合而成，摩卡得名于有名的摩卡港。</p>
+					
+				</div>
+				<div class="col-md-3 col-sm-3 shopping-content-two" >
+					<div class="ondiv">
+						<img src="img/naTie.jpg"  class="on"/>
+					</div>
+					<p>冰拿铁</p>
+					<p>是意大利浓缩咖啡与牛奶的混合，而且牛奶多而咖啡少是拿铁咖啡的特点，是花式咖啡的一种。</p>
+
+				</div>
+				<div class="col-md-3 col-sm-3 shopping-content-two" >
+					<div class="ondiv">
+						<img src="img/redNa.jpg" class="on"/>
+					</div>
+					
+					<p >红茶拿铁</p>
+					<p >与水果拿铁类似，是由红茶提取物与牛奶以1：4的比例混合调制而成，味道醇厚清香，是一种非常健康的饮品。</p>
+
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!--门店分布-->
+	<div id="about">
+		<p class="about-title">分店分布</p>
+		<div class="about-line"></div>
+		<div class="container about-content">
+			<div class="row ">
+				<div class="col-md-3 col-sm-6 image3">
+					<img src="img/shop1.jpg"/>
+					<div class="shop">
+						<p>COFFEE SHOP ONE</p>
+						<p>咖啡店1的地址</p>
+						<img src="img/phone.png"/>
+						
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 image3">
+					<img src="img/shop2.jpg"/>
+					<div class="shop">
+						<p>COFFEE SHOP TWO</p>
+						<p>咖啡店2的地址</p>
+						<img src="img/phone.png"/>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 image3">
+					
+					<img src="img/shop3.jpg"/>
+					<div class="shop">
+						<p>COFFEE SHOP THREE</p>
+						<p>咖啡店3的地址</p>
+						<img src="img/phone.png"/>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 image3">
+					<img src="img/shop4.jpg"/>
+					<div class="shop">
+						<p>COFFEE SHOP FOUR</p>
+						<p>咖啡店4的地址</p>
+						<img src="img/phone.png"/>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!--会员中心-->
+	<div class="imageBg">
+		<div class="imageBg-content">
+			<h4 >会员中心</h4>
+			<p>MEMBER CENETR</p>
+		</div>
+	</div>
+	<!--关于我们-->		
+	<div class="container" id="contact">
+		<div class="row" >
+			<div class="col-md-6 col-sm-6 contact-content" >
+				<img src="img/drink.jpg" />
+			</div>
+			<div class="col-md-6 col-sm-6 contact-content-two"  >
+				<div class="contact-content-two-content">
+					<h1>关于我们</h1>
+					<div></div>
+					<p>Our Coffee brand aims to achieve a set of people, Chi Chi, and jointly build a resource integration, play a remarkable efficiency of the coffee social platform; coffee is gradually becoming a high-end business elite culture of change, innovators and leaders</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+		
+		<footer class="hidden-sm hidden-xs" id="footer">
+			<div class="container ">
+				<ul class="footerList list-unstyled col-sm-3">
+					<li><a href="javascript:">产品家族</a></li>
+					<li><a href="javascript:">咖啡机</a></li>
+					<li><a href="javascript:">浓臻交响</a></li>
+					<li><a href="javascript:">即饮系列</a></li>
+					<li><a href="javascript:">礼盒系列</a></li>
+					<li><a href="javascript:">醇咖啡系列</a></li>
+				</ul>
+				<ul class="footerList list-unstyled col-sm-3">
+					<li><a href="javascript:">品牌介绍</a></li>
+					<li><a href="javascript:">品牌介绍</a></li>
+					<li><a href="javascript:">品牌文化</a></li>
+					<li><a href="javascript:">品牌视频</a></li>
+					<li><a href="javascript:">品牌历程</a></li>
+				</ul>
+				<ul class="footerList list-unstyled col-sm-3">
+					<li><a href="javascript:">产品介绍</a></li>
+					<li><a href="javascript:">当季新品</a></li>
+					<li><a href="javascript:">当季爆品</a></li>
+					<li><a href="javascript:">产品列表</a></li>
+					<li><a href="javascript:">最新活动</a></li>
+				</ul>
+				<ul class="footerList list-unstyled col-sm-3">
+					<li><a href="javascript:">会员活动</a></li>
+					<li><a href="javascript:">会员权益</a></li>
+					<li><a href="javascript:">会员节日</a></li>
+					<li><a href="javascript:">联系我们</a></li>
+					<li><a href="javascript:">网上留言</a></li>
+				</ul>
+				<div class="footerText col-sm-12">
+					<p>ALL RIGHTS RESERVED ©2017</p>
+					<p>xxxx资管理有限公司 版权所有</p>
+					<p>热线电话:000-000-0000  </p>
+				</div>
+			</div>
+		</footer>			
+		<script>
+			$(function(){
+				$(".nav").singlePageNav({
+					offset: 70
+				});
+				$(".nav>li").click(function(){
+					$(this).addClass("active").siblings().removeClass("active");
+				});
+	
+	    		$(".carousel").carousel({interval: 3000, wrap:true});
+	    		var i=1;
+	    		$(".image li").addClass("check");
+	    		$(".change").click(function(){
+	    			if(i==1){
+	    				$(".check").css("transform","translateX(-100%)");
+	    				$(".rig p").eq(1).html("MACHINE&nbsp;&nbsp;TWO");
+	    				i++;
+	    			}
+	    			else if(i==2){
+		    			$(".check").css("transform","translateX(-200%)");
+		    			$(".rig p").eq(1).html("MACHINE&nbsp;&nbsp;THREE");
+		    			i++;
+	    			}
+	    			else{}
+	    		});
+	    		$(".changer").click(function(){
+	    			if(i==3){
+	    				$(".check").css("transform","translateX(-100%)");
+	    				$(".rig p").eq(1).html("MACHINE&nbsp;&nbsp;TWO");
+	    				i--;
+	    			}
+	    			else if(i==2){
+	    				$(".check").css("transform","translateX(0%)");
+	    				$(".rig p").eq(1).html("MACHINE&nbsp;&nbsp;ONE");
+	    				i--;
+	    			}
+	    			else{
+	    				
+	    			}
+	    		});
+   			});
+		</script>
+</body>
+</html>
