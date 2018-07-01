@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>方寸停车</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#mycarousel").carousel({
+					interval:2000,
+					wrap:true
+				})
+			})
+		</script>
+		<style type="text/css">
+			/*header*/
+			a{
+				text-decoration: none;	
+			}
+			p,h1,h2,h3,h4,h5{
+				font-family: "微软雅黑";	
+			}
+			
+			.navbar .container .navbar-header{
+				height: 100px;
+			}
+			
+			#mycollapse li a{
+				line-height: 60px;
+				color: white;
+				font-size: 22px;
+			}
+			#mycollapse li{
+				height: 100px;
+				margin-left: 5px;
+			}
+			.line{
+				width: 60px;
+				height: 3px;
+				border-radius: 10px;
+				background: white;
+				margin: 0 auto;
+				display: none;
+			}
+			#mycollapse li:nth-of-type(2) .line{
+				display: block;
+			}
+			#mycollapse li:hover .line{
+				display: block;
+			}
+			
+			/*slider*/
+			.slider{
+				height: 700px;
+				background: deepskyblue;
+				margin-top: 100px;
+				margin-bottom: 0px;
+			}
+			.item{
+				height: 700px;
+			}
+			.slider-line{
+				width: 40px;
+				height: 3px;
+				border-radius: 10px;
+				background: white;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			.slider-right{
+				margin-top: 150px;
+			}
+			.slider-right h1{
+				color: deepskyblue;
+				background: white;
+				border-radius: 10px;
+				padding: 10px;
+				font-size:40px;
+				text-align: center;
+				width: 230px;
+			}
+			.slider-right h3{
+				color: white;
+				font-size: 20px;
+			}
+			.phone{
+				margin-top: 130px;
+			}
+			
+			/*content*/
+			.content-img{
+				margin-top: 200px;
+			}
+			.moveto .movetext{
+				transition: 0.5s ease-in;
+				opacity: 0;
+				background: burlywood;
+				height: 30px;
+			}
+			.movetext h4{
+				padding-top: 5px;
+			}
+			.moveto:hover .movetext{
+				transform: translateY(-40px);
+				opacity: 1;
+			}
+			/*footer*/
+			h4{
+				margin-bottom: 30px;
+			}
+			h4:nth-of-type(4){
+				margin-bottom: 0px;
+			}
+			.foot{
+				margin-top: 50px; background: black;
+			}
+			.foot h3{
+				color: white;
+			}
+			.foot h4
+			{
+				color: white;
+			}
+			.foot p{
+				color: white;
+			}
+			.foot-content{
+				background: black;width: 100%;padding-top: 50px;margin-bottom: -100px;
+			}
+			.foot-content .img{
+				width: 130px;height: 130px;
+				transition: 0.5s;
+			}
+			.foot-content .img:hover{
+				transform: scale(1.5);
+				box-shadow: 3px 3px 10px white;
+			}
+			.about{
+				position: relative; left: 50px;top:-175px
+			}
+			@media only screen and (min-width:768px ) and (max-width:992px){
+				#mycollapse li a{
+					font-size: 15px;
+				}
+				.phone{
+					height: 350px;
+					width: 450px;
+					
+				}
+				.slider{
+					height: 500px;
+					background: deepskyblue;
+					margin-top: 100px;
+				}
+				.item{
+					height: 500px;
+				}
+				.slider-right h1{
+					color: deepskyblue;
+					background: white;
+					border-radius: 10px;
+					padding: 5px;
+					font-size:25px;
+					text-align: center;
+					width: 150px;
+				}
+				.slider-right h3{
+					color: white;
+					font-size: 20px;
+				}
+				.content-left{
+					margin-left: 0px;	
+				}
+				.low{
+					margin-left: 50px;
+				}
+				.content-img{
+					margin-top: 100px;
+				}
+			}
+			@media only screen and (max-width:768px ) and (min-width :400px) {
+				.line{
+					width: 100%;
+					height: 3px;
+					border-radius: 10px;
+					background: white;
+				}
+				.slider{
+					height: 400px;
+					background: deepskyblue;
+					margin-top: 100px;
+				}
+				.item{
+					height: 400px;
+				}
+				.slider-right h1{
+					color: deepskyblue;
+					background: white;
+					border-radius: 10px;
+					padding: 5px;
+					font-size:20px;
+					text-align: center;
+					width: 120px;
+				}
+				.slider-right h3{
+					color: white;
+					font-size: 15px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.phone{
+					height: 200px;
+					width: 234px;
+					margin-top: 120px;
+				}
+				.slider-right{
+					margin-top: 80px;
+				}
+				.content-left{
+					margin-left: 0px;	
+				}
+				.low{
+					margin-left: 20px;
+				}
+				.content-img{
+					margin-top: 50px;
+				}
+				.movetext h4{
+					font-size: 13px;
+				}
+				
+			}
+			@media only screen and (max-width :400px ) {
+				.line{
+					width: 100%;
+					height: 3px;
+					border-radius: 10px;
+					background: white;
+				}
+				.slider{
+					height: 200px;
+					background: deepskyblue;
+					margin-top: 100px;
+				}
+				.item{
+					height: 200px;
+				}
+				.slider-right{
+					margin-top: 0px;
+				}
+				
+				.slider-right h1{
+					color: deepskyblue;
+					background: white;
+					border-radius: 10px;
+					padding: 5px;
+					font-size:20px;
+					text-align: center;
+					width: 120px;
+				}
+				.slider-right h3{
+					color: white;
+					font-size: 15px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.phone{
+					height: 200px;
+					width: 234px;
+					margin-top: 0px;
+				}
+				.content-left{
+					margin-left: 00px;	
+				}
+			}
+		</style>
+	</head>
+	
+	<body style="background: beige;">
+		<!--headr-->
+		<nav class="navbar navbar-default navbar-fixed-top" style="background: deepskyblue;">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mycollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<a href="#" class="navbar-brand" style="padding: 0px;">
+						<img src="img/logo.png" class="img-responsive"/>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse  navbar-right" id="mycollapse">
+					<ul class="nav navbar-nav ">
+						<li><a href="index.html" >首页</a><div class="line"></div></li>
+						<li><a href="pack.html">方寸停车</a><div class="line"></div></li>
+						<li><a href="chat.html">智慧社区</a><div class="line"></div></li>
+						<li><a href="news.html">新闻资讯</a><div class="line"></div></li>
+						<li><a href="business.html">招商加盟</a><div class="line"></div></li>
+						<li><a href="about.html">关于我们</a><div class="line"></div></li>
+					</ul>
+				</div>
+			</div>	
+		</nav>
+		<!--slider-->
+		
+		<div class="slider">
+			<div class="carousel slide" id="mycarousel">
+				<ol class="carousel-indicators">
+					<li class="active" data-target="#mycarousel" data-slide-to="0"></li>
+					<li data-target="#mycarousel" data-slide-to="1"></li>
+					
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active" >
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<img src="img/banner.png" class="phone" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 slider-right">
+							<h1>掌上停车场</h1>
+							<h3>无感支付•无人值守•智慧报表</h3>
+							<div class="slider-line"></div>
+							<button class="btn btn-info"><img src="img/video.png"/>&nbsp;&nbsp;播放动画</button>
+						</div>
+					</div>
+					<div class="item" >
+						<img src="img/index-banner.png" style="margin-left: 80px;"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--content-->
+		<div class="content" style="background: white;text-align: center;margin-top: -20px;padding-top: 50px;">
+			<div class="content-one" style="" >
+				<h2>方寸间 轻松停</h2>
+				<p>Easy Parking</p>
+				<img src="img/6.jpg" class="img-responsive"/>
+			</div>
+			<div class="content-two" style="background: #F5F5F5;padding-top: 50px;">
+				<h2>数据管理系统</h2>
+				<p>Data Management System</p>
+				<div class="content-line" style="width: 50px;height: 2px;border-radius: 3px;background: black;margin: 0 auto;"></div>
+				<h4>收益随手查</h4>
+				<img src="img/5.jpg"  class="img-responsive"/>
+			</div>
+			<div class="content-three" style="padding-top: 50px;">
+				<h2>微信支付/无感支付</h2>
+				<p>WeChat Payment/No-Touch Payment</p>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<img src="img/fl3.png" class="img-responsive"/>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 content-img" >
+						<h4 style="margin-bottom: 0px;">自动支付，出场更便捷，更顺畅，更安全</h4>
+						<p>Automatic Payment, More Convenient, Smoother, Safer</p>
+					</div>
+				</div>
+			</div>	
+			<div class="content-four" style="background: #F5F5F5;padding-top: 50px;">
+				<h2>无牌车</h2>
+				<p>No-Plate Car</p>
+				<div class="content-line" style="width: 50px;height: 2px;border-radius: 3px;background: black;margin: 0 auto;"></div>
+				<h4>进出场，只需扫一扫</h4>
+				<img src="img/7.jpg"  class="img-responsive"/>
+			</div>
+			<div class="content-five" style="padding-top: 50px;">
+				<h2>一键挪车</h2>
+				<p>One Button Car Moving</p>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<img src="img/fl5.png" class="img-responsive"/>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 content-img" >
+						<h4 style="margin-bottom: 0px;">车被堵，轻松挪</h4>
+						<p>Easy to Move the Blocking Car</p>
+					</div>
+				</div>
+			</div>	
+			<div class="content-six" style="background: #F5F5F5;padding-top: 50px;">
+				<h2>停车小程序</h2>
+				<p>WeChat Applet for Parking</p>
+				<div class="content-line" style="width: 50px;height: 2px;border-radius: 3px;background: black;margin: 0 auto;"></div>
+				<h4>数字化停车场</h4>
+				<div class="container">
+					<div class="col-md-3 col-sm-3 col-xs-3" style="background: white;">
+						<img src="img/fl6-1.png" class="img-responsive" style="margin: 0 auto;"/>
+						<h4>无需下载</h4>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3 " >
+						<img src="img/fl6-2.png" class="img-responsive" style="margin: 0 auto;"/>
+						<h4>不占内存</h4>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3 " style="background: white;">
+						<img src="img/fl6-3.png" class="img-responsive" style="margin: 0 auto;"/>
+						<h4>无需关注</h4>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3 " >
+						<img src="img/fl6-4.png" class="img-responsive" style="margin: 0 auto;"/>
+						<h4>用完就走</h4>
+					</div>
+				</div>
+			</div>
+			<div class="content-seven" style="padding-top: 50px;">
+				<h2>电子发票，优惠卷</h2>
+				<p>Electronic Invoices, Coupons</p>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6" >
+							<div class="one" >
+								<img src="img/fl7-1.png" class="img-responsive" style="margin: 0 auto;"/>
+								<h4 style="margin-bottom: 0px;">电子发票</h4>
+								<p>无需邮寄，直接下载。</p>
+								
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="two" style="margin: 0 auto;">
+								<img src="img/fl7-2.png" class="img-responsive" style="margin: 0 auto;"/>
+								<h4 style="margin-bottom: 0px;">优惠券</h4>
+								<p>减免停车费，免费领取</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="content-eight" style="background: #F5F5F5;padding-top: 50px;">
+				<h2>案例</h2>
+				<p>case</p>
+				<div class="container">
+					<div class="col-md-3 col-sm-3 col-xs-3" >
+						<div style="overflow: hidden;height: 190px;" class="moveto">
+							<img src="img/20180528173639.png" class="img-responsive" style="margin: 0 auto;"/>
+							
+							<div class="movetext">
+								<h4 style="color: white;" >常达万州广场</h4>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3 " >
+						<div style="overflow: hidden;height: 190px;" class="moveto">
+							<img src="img/20180528173647.png" class="img-responsive" style="margin: 0 auto;"/>
+							
+							<div class="movetext">
+								<h4 style="color: white;" >惠州学院</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3 ">
+						<div style="overflow: hidden;height: 190px;" class="moveto">
+							<img src="img/20180528173655.png" class="img-responsive" style="margin: 0 auto;"/>
+							
+							<div class="movetext">
+								<h4 style="color: white;" >万达广场</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3 " >
+						<div style="overflow: hidden;height: 190px;" class="moveto">
+							<img src="img/20180528173704.png" class="img-responsive" style="margin: 0 auto;"/>
+							
+							<div class="movetext">
+								<h4 style="color: white;" >深圳信息职业技术学院</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--foot-->
+		<footer class="foot">
+			<div class="container foot-content">
+				<div class="col-md-2 col-sm-4 col-xs-4" style="text-align: center; ">
+					<img src="img/footer-1.jpg" class="img"/>
+					<h4>官方微信</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4" style="text-align: center; ">
+					<img src="img/footer-2.jpg" class="img"/>
+					<h4>方寸停车小程序</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4" style="text-align: center; ">
+					<img src="img/footer-3.png" class="img"/>
+					<h4>方寸停车管理助手</h4>
+				</div>
+				
+				<div class="col-md-6 low">
+					<img src="img/foot-icon.png" />
+					<div class="about">
+						<h4>联系我们：0755-86544121</h4>
+						<h4>微信号：18903024699</h4>
+						<h4>邮箱：bd@fangcuntingche.com</h4>
+						<h4>广东省深圳市南山区后海大道2378号20楼</h4>
+						<p>20F, Mango Tower, No.2378 Houhai Avenue, Nanshan District, Shen</p>
+					</div>
+				</div>
+			</div>
+			<div style="text-align: center;" class="col-md-12">
+				<p style="letter-spacing: 2px;font-size: 17px;">深圳市方寸科技服务有限公司|粤ICP备18040346号 |<a style="color: white;">方寸停车管理助手--网页版</a></p>
+			</div>
+			
+		</footer>
+		
+	</body>
+</html>
+
+

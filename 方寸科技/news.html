@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>新闻资讯</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#mycarousel").carousel({
+					interval:2000,
+					wrap:true
+				})
+			})
+		</script>
+		<style type="text/css">
+			/*header*/
+			a{
+				text-decoration: none;	
+			}
+			p,h1,h2,h3,h4,h5{
+				font-family: "微软雅黑";	
+			}
+			
+			.navbar .container .navbar-header{
+				height: 100px;
+			}
+			
+			#mycollapse li a{
+				line-height: 60px;
+				color: white;
+				font-size: 22px;
+			}
+			#mycollapse li{
+				height: 100px;
+				margin-left: 5px;
+			}
+			.line{
+				width: 60px;
+				height: 3px;
+				border-radius: 10px;
+				background: white;
+				margin: 0 auto;
+				display: none;
+			}
+			#mycollapse li:nth-of-type(4) .line{
+				display: block;
+			}
+			#mycollapse li:hover .line{
+				display: block;
+			}
+			
+			/*slider*/
+			.content{
+				padding: 15px 10px;
+				background:white ;
+				margin: 20px 10px;
+				box-shadow: 2px 2px 5px black;
+				padding: 20px 50px;
+				
+			}
+			.content-right{
+				padding: 15px 10px;
+				background:white ;
+				box-shadow: 2px 2px 5px black;
+			}
+			.content-right h3{
+				margin-top:0px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				font-size: 20px;
+			}
+			.content h3{
+				margin-top:0px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			blockquote{
+				height: 30px;
+				padding-top: 0px;
+
+			}
+			.content-2{
+				display: none;
+			}
+			.content1{
+				background: white; margin:150px 0px;padding-top: 50px;padding-bottom:50px;width: 90%;margin-left: 5%;
+			}
+			.title{
+				margin-left: 50px;font-size:25px;border-left: 5px solid deepskyblue;margin-bottom: 50px;padding-left: 20px;
+			}
+			/*footer*/
+			h4{
+				margin-bottom: 30px;
+			}
+			h4:nth-of-type(4){
+				margin-bottom: 0px;
+			}
+			.foot{
+				margin-top: 50px; background: black;
+			}
+			.foot h3{
+				color: white;
+			}
+			.foot h4
+			{
+				color: white;
+			}
+			.foot p{
+				color: white;
+			}
+			.foot-content{
+				background: black;width: 100%;padding-top: 50px;margin-bottom: -100px;
+			}
+			.foot-content .img{
+				width: 130px;height: 130px;
+				transition: 0.5s;
+			}
+			.foot-content .img:hover{
+				transform: scale(1.5);
+				box-shadow: 3px 3px 10px white;
+			}
+			.about{
+				position: relative; left: 50px;top:-175px
+			}
+			@media only screen and (min-width:768px ) and (max-width:992px){
+				#mycollapse li a{
+					font-size: 15px;
+				}
+				.phone{
+					height: 350px;
+					width: 450px;
+					
+				}
+				.slider{
+					height: 500px;
+					background: deepskyblue;
+					margin-top: 100px;
+				}
+				.item{
+					height: 500px;
+				}
+				.slider-right h1{
+					color: deepskyblue;
+					background: white;
+					border-radius: 10px;
+					padding: 5px;
+					font-size:25px;
+					text-align: center;
+					width: 150px;
+				}
+				.slider-right h3{
+					color: white;
+					font-size: 20px;
+				}
+				.content-left{
+					margin-left: 0px;	
+				}
+				.low{
+					margin-left: 50px;
+				}
+				.content-img{
+					margin-top: 100px;
+				}
+			}
+			@media only screen and (max-width:768px ) and (min-width :400px) {
+				.line{
+					width: 100%;
+					height: 3px;
+					border-radius: 10px;
+					background: white;
+				}
+				.slider{
+					height: 400px;
+					background: deepskyblue;
+					margin-top: 100px;
+				}
+				.item{
+					height: 400px;
+				}
+				.slider-right h1{
+					color: deepskyblue;
+					background: white;
+					border-radius: 10px;
+					padding: 5px;
+					font-size:20px;
+					text-align: center;
+					width: 120px;
+				}
+				.slider-right h3{
+					color: white;
+					font-size: 15px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.phone{
+					height: 200px;
+					width: 234px;
+					margin-top: 120px;
+				}
+				.slider-right{
+					margin-top: 80px;
+				}
+				.content-left{
+					margin-left: 0px;	
+				}
+				.low{
+					margin-left: 20px;
+				}
+				.content-img{
+					margin-top: 50px;
+				}
+				
+			}
+			@media only screen and (max-width :400px ) {
+				.line{
+					width: 100%;
+					height: 3px;
+					border-radius: 10px;
+					background: white;
+				}
+				.slider{
+					height: 200px;
+					background: deepskyblue;
+					margin-top: 100px;
+				}
+				.item{
+					height: 200px;
+				}
+				.slider-right{
+					margin-top: 0px;
+				}
+				
+				.slider-right h1{
+					color: deepskyblue;
+					background: white;
+					border-radius: 10px;
+					padding: 5px;
+					font-size:20px;
+					text-align: center;
+					width: 120px;
+				}
+				.slider-right h3{
+					color: white;
+					font-size: 15px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.phone{
+					height: 200px;
+					width: 234px;
+					margin-top: 0px;
+				}
+				.content-left{
+					margin-left: 00px;	
+				}
+			}
+		</style>
+	</head>
+	
+	<body style="background: beige;">
+		<!--headr-->
+		<nav class="navbar navbar-default navbar-fixed-top" style="background: deepskyblue;">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mycollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<a href="#" class="navbar-brand" style="padding: 0px;">
+						<img src="img/logo.png" class="img-responsive"/>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse  navbar-right" id="mycollapse">
+					<ul class="nav navbar-nav ">
+						<li><a href="index.html" >首页</a><div class="line"></div></li>
+						<li><a href="pack.html">方寸停车</a><div class="line"></div></li>
+						<li><a href="chat.html">智慧社区</a><div class="line"></div></li>
+						<li><a href="news.html">新闻资讯</a><div class="line"></div></li>
+						<li><a href="business.html">招商加盟</a><div class="line"></div></li>
+						<li><a href="about.html">关于我们</a><div class="line"></div></li>
+					</ul>
+				</div>
+			</div>	
+		</nav>
+		<!--content-->
+		<div  class="container content1">
+			<div class="title">新闻资讯</div>
+			<div class="content-1">
+				<div class="container" style="background: #F5F5F5;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<div class="container-fluid content">
+								<div class="row ">
+									<div class="col-md-4 col-xs-4">
+										<img src="img/com-fl2-3.png" class="img-responsive"/>
+									</div>
+									<div class="col-md-8 col-xs-8">
+										<h3>微信支付服务商大会（长沙站）召开----方寸科技率先提供...</h3>
+										<p class="hidden-sm hidden-xs"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+										<p>2018/08/08</p>								
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="container" style="background: #F5F5F5;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<div class="container-fluid content">
+								<div class="row ">
+									<div class="col-md-4 col-xs-4">
+										<img src="img/com-fl2-3.png" class="img-responsive"/>
+									</div>
+									<div class="col-md-8 col-xs-8">
+										<h3>微信支付服务商大会（长沙站）召开----方寸科技率先提供...</h3>
+										<p class="hidden-sm hidden-xs"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+										<p>2018/08/08</p>								
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="container" style="background: #F5F5F5;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<div class="container-fluid content">
+								<div class="row ">
+									<div class="col-md-4 col-xs-4">
+										<img src="img/com-fl2-3.png" class="img-responsive"/>
+									</div>
+									<div class="col-md-8 col-xs-8">
+										<h3>微信支付服务商大会（长沙站）召开----方寸科技率先提供...</h3>
+										<p class="hidden-sm hidden-xs"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+										<p>2018/08/08</p>								
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>	
+			<div class="content-2" >
+				<div class="container" style="background: #F5F5F5;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<div class="container-fluid content">
+								<div class="row ">
+									<div class="col-md-4 col-xs-4">
+										<img src="img/com-fl2-2.png" class="img-responsive"/>
+									</div>
+									<div class="col-md-8 col-xs-8">
+										<h3>方寸科技携手深圳交警，首批接入深圳交警局系统</h3>
+										<p class="hidden-sm hidden-xs"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+										<p>2018/08/08</p>								
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="container" style="background: #F5F5F5;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<div class="container-fluid content">
+								<div class="row ">
+									<div class="col-md-4 col-xs-4">
+										<img src="img/com-fl2-2.png" class="img-responsive"/>
+									</div>
+									<div class="col-md-8 col-xs-8">
+										<h3>方寸科技携手深圳交警，首批接入深圳交警局系统</h3>
+										<p class="hidden-sm hidden-xs"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+										<p>2018/08/08</p>								
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="container" style="background: #F5F5F5;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<div class="container-fluid content">
+								<div class="row">
+									<div class="col-md-4 col-xs-4">
+										<img src="img/com-fl2-2.png" class="img-responsive"/>
+									</div>
+									<div class="col-md-8 col-xs-8">
+										<h3>方寸科技携手深圳交警，首批接入深圳交警局系统</h3>
+										<p class="hidden-sm hidden-xs"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
+										<p>2018/08/08</p>								
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="container" style="text-align: center;">
+				<div class="btn-group" style="margin-top:20px;">
+					<button class="btn btn-info active">1</button>
+					<button class="btn btn-info">2</button>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	
+		<!--foot-->
+		<footer class="foot">
+			<div class="container foot-content">
+				<div class="col-md-2 col-sm-4 col-xs-4" style="text-align: center; ">
+					<img src="img/footer-1.jpg" class="img"/>
+					<h4>官方微信</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4" style="text-align: center; ">
+					<img src="img/footer-2.jpg" class="img"/>
+					<h4>方寸停车小程序</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4" style="text-align: center; ">
+					<img src="img/footer-3.png" class="img"/>
+					<h4>方寸停车管理助手</h4>
+				</div>
+				
+				<div class="col-md-6 low">
+					<img src="img/foot-icon.png" />
+					<div class="about">
+						<h4>联系我们：0755-86544121</h4>
+						<h4>微信号：18903024699</h4>
+						<h4>邮箱：bd@fangcuntingche.com</h4>
+						<h4>广东省深圳市南山区后海大道2378号20楼</h4>
+						<p>20F, Mango Tower, No.2378 Houhai Avenue, Nanshan District, Shen</p>
+					</div>
+				</div>
+			</div>
+			<div style="text-align: center;" class="col-md-12">
+				<p style="letter-spacing: 2px;font-size: 17px;">深圳市方寸科技服务有限公司|粤ICP备18040346号 |<a style="color: white;">方寸停车管理助手--网页版</a></p>
+			</div>
+			
+		</footer>
+		
+	</body>
+	<script>
+		$(function(){
+			$("button:nth-of-type(1)").click(function(){
+				$(".content-1").css("display","block");
+				$(".content-2").css("display","none");
+				$("button:nth-of-type(1)").addClass("active");
+				$("button:nth-of-type(2)").removeClass("active");
+			})
+			$("button:nth-of-type(2)").click(function(){
+				$(".content-1").css("display","none");
+				$(".content-2").css("display","block");
+				$("button:nth-of-type(2)").addClass("active");
+				$("button:nth-of-type(1)").removeClass("active");
+			})
+		})
+		
+	</script>
+</html>
+
+
